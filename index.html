@@ -37,6 +37,7 @@
     <div id="loading">
       <img id="loading-image" src="load.gif" alt="Loading..." />
     </div>
+    <button onclick="darkMode()">turn on dark mode (comments only)</button>
     <h1>Freakybob.site WORKING on IE11!</h1>
     <video
       id="my-video"
@@ -65,7 +66,8 @@
         issue-number="1"
         theme="github-light"
         crossorigin="anonymous"
-        async>
+        async
+        id="cmt">
 </script>
   <br>
   <hr>
@@ -97,7 +99,8 @@
         issue-number="2"
         theme="github-light"
         crossorigin="anonymous"
-        async>
+        async
+        id="cmt">
 </script>
 <br>
 <hr>
@@ -130,7 +133,8 @@
         issue-number="3"
         theme="github-light"
         crossorigin="anonymous"
-        async>
+        async
+        id="cmt">
 </script>
   <br>
   <hr>
@@ -162,7 +166,8 @@
         issue-number="4"
         theme="github-light"
         crossorigin="anonymous"
-        async>
+        async
+        id="cmt">
 </script>
     <script src="https://vjs.zencdn.net/8.16.1/video.min.js"></script>
     <script>
@@ -175,4 +180,11 @@
       Licensed under GPL-3.0!
     Loading GIF by <a href="https://icons8.com/preloaders/en/people_and_animals/walk/">https://icons8.com/preloaders/en/people_and_animals/walk/</a>
     </footer>
+    <script>
+      function darkMode() {
+        comments = document.getElementById("cmt")
+        comments.removeAttribute(theme)
+        comments.setAttribute(theme, "github-dark")
+      }
+    </script>
   </body>

@@ -1,9 +1,39 @@
 <!DOCTYPE html>
 <head>
-  
+  <title>404 | FreakyTube</title>
+  <meta content="https://videos.Freakybob.site/favicon.png" property="og:image" />
+  <meta content="FreakyTube" property="og:title" />
+<meta content="Why send the 404 page? Are you good?" property="og:description" />
+<meta content="https://videos.Freakybob.site/404" property="og:url" />
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+<link href="https://vjs.zencdn.net/8.16.1/video-js.css" rel="stylesheet" />
+<script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+  <style>
+    * {
+      font-family: "Noto Sans", sans-serif;
+    }
+    h1, p {
+   color: white;
+ }
+  </style>
 </head>
-<body>
+<body bgcolor="black">
   <h1>Oops!</h1>
   <p>A 404 page.</p>
-  <video src="https://f.feridinha.com/r6Riv.mp4">
+  <video id="my-video" class="video-js" controls preload="auto" poster="../thumbnails/ie6.jpg" data-setup="{}" autoplay>
+    <source src="404.mp4" type="video/mp4" />
+    <script>
+      $(window).on('load', function () {
+        $('#loading').hide();
+      }) 
+    </script>
+    <script src="https://vjs.zencdn.net/8.16.1/video.min.js"></script>
+      <div class="like-comment-container">
+        <p>Did you like this page?</p>
+        <div data-lyket-type="updown" data-lyket-id="404"></div>
+    </div>
 </body>

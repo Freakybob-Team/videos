@@ -5,90 +5,146 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Freakybob Clicker | Freakybob Videos</title>
     <link href="https://vjs.zencdn.net/8.16.1/video-js.css" rel="stylesheet" />
-      <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
-      <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
-      <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-      <!-- thanks https://videojs.com/getting-started <3-->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        <meta content="Freakybob Clicker!1111!!! | Freakybob Video" property="og:title" />
-<meta content="Freakybob Clicker Gameplay - 1.7" property="og:description" />
-<meta content="https://videos.freakybob.site/videos/id/3.html" property="og:url" />
-<meta content="../thumbnails/clicker.jpg" property="og:image" />
-<meta content="#43B581" data-react-helmet="true" name="theme-color" />
+    <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <meta content="Freakybob Clicker!1111!!! | Freakybob Video" property="og:title" />
+    <meta content="Freakybob Clicker Gameplay - 1.7" property="og:description" />
+    <meta content="https://videos.freakybob.site/videos/id/3.html" property="og:url" />
+    <meta content="../thumbnails/clicker.jpg" property="og:image" />
+    <meta content="#43B581" name="theme-color" />
+    <link rel="icon" type="image/png" href="../favicon.png">
     <style>
-                * {
-          font-family: "Noto Sans", sans-serif;
+        * {
+            font-family: "Noto Sans", sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #202020;
+            color: #fff;
+            padding: 20px;
+        }
+        a {
+            color: #1E90FF;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        h1, h2 {
+            margin-bottom: 20px;
+        }
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+        }
+        .logo {
+            width: 180px;
+            height: auto;
+        }
+        .video-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .video-js {
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 20px;
         }
         #loading {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0.7;
-  background-color: #fff;
-  z-index: 99;
-}
-
-#loading-image {
-  z-index: 100;
-}
-.logo {
-width: 180px;
-height: auto;
-}
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0.7;
+            background-color: #fff;
+            z-index: 99;
+        }
+        #loading-image {
+            z-index: 100;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .content p {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .like-comment-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 800px;
+            width: 100%;
+            margin-top: 20px;
+        }
+        .like-comment-container div,
+        .like-comment-container a {
+            color: #43B581;
+        }
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 14px;
+        }
     </style>
-    <link rel="icon" type="image/png" href="../favicon.png">
 </head>
 <body>
-  <img class="logo" src="/logodark.png">
-      <!-- NOTE: COMMENTS DO NOT WORK LOCALLY! -->
-      <div id="loading">
-        <img id="loading-image" src="../load.gif" alt="Loading..." />
-      </div>
-      <br>
-      <video
-        id="my-video"
-        class="video-js"
-        controls
-        preload="auto"
-        width="640"
-        height="264"
-        poster="../thumbnails/clicker.jpg"
-        data-setup="{}"
-      >
-        <source src="../videos/clicker.mp4" type="video/mp4" />
-        <source src="MY_VIDEO.webm" type="video/webm" />
-        <p class="vjs-no-js">
-         hey! I would recommend using a browser that SUPPORTS JS??? HOW ARE YOU EVEN HERE
-          <a href="https://videojs.com/html5-video-support/" target="_blank"
-            >supports HTML5 video</a>
-        </p>
-      </video>
-      <!--if youre reading this you should know names is -->
-      <h1>Freakybob Clicker Gameplay - 1.7</h1>
-      <h2>Description</h2>
-      <p>Want to play Freakybob Clicker?
-        Go to <a href="https://scratch.mit.edu/projects/1059751585/">https://scratch.mit.edu/projects/1059751585/</a>!</p>
-    <div data-lyket-type="updown" data-lyket-id="clicker"></div>
+
+    <div class="logo-container">
+        <a href="https://videos.freakybob.site"><img class="logo" src="/logodark.png" alt="Freakybob Logo"></a>
+    </div>
+<!-- NOTE: COMMENTS DO NOT WORK LOCALLY! -->
+    <div id="loading">
+        <img id="loading-image" src="../load.gif" alt="Loading...">
+    </div>
+
+    <div class="video-container">
+        <video id="my-video" class="video-js" controls preload="auto" poster="../thumbnails/clicker.jpg" data-setup="{}">
+            <source src="../videos/clicker.mp4" type="video/mp4" />
+            <source src="MY_VIDEO.webm" type="video/webm" />
+            <p class="vjs-no-js">
+                Hey! I would recommend using a browser that SUPPORTS JS. HOW ARE YOU EVEN HERE?
+                <a href="https://videojs.com/html5-video-support/" target="_blank">Supports HTML5 video</a>
+            </p>
+        </video>
+          <!--if youre reading this you should know names is -->
+        <h1>Freakybob Clicker Gameplay - 1.7</h1>
+        <h2>Description</h2>
+        <p>Want to play Freakybob Clicker? Go to <a href="https://scratch.mit.edu/projects/1059751585/">https://scratch.mit.edu/projects/1059751585/</a>!</p>
+    </div>
+
+    <div class="like-comment-container">
+        <div data-lyket-type="updown" data-lyket-id="clicker"></div>
+        <a href="https://github.com/Freakybob-Team/videos/issues/1">Comment on GitHub</a>
+    </div>
+
     <script src="https://utteranc.es/client.js"
-          repo="Freakybob-Team/videos"
-          issue-number="1"
-          theme="github-light"
-          crossorigin="anonymous"
-          async>
-  </script>
-  <p>Don't trust the app? Comment manually <a href="https://github.com/Freakybob-Team/videos/issues/1">here</a>!</p>
-  <script src="https://vjs.zencdn.net/8.16.1/video.min.js"></script>
-  <script>
-    $(window).on('load', function () {
-      $('#loading').hide();
-    }) 
-  </script>
+        repo="Freakybob-Team/videos"
+        issue-number="1"
+        theme="github-light"
+        crossorigin="anonymous"
+        async>
+    </script>
+
+    <script src="https://vjs.zencdn.net/8.16.1/video.min.js"></script>
+    <script>
+        $(window).on('load', function () {
+            $('#loading').hide();
+        });
+    </script>
+
 </body>
 </html>

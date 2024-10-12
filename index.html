@@ -1,70 +1,184 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://vjs.zencdn.net/8.16.1/video-js.css" rel="stylesheet" />
-  <title>FreakyTube</title>
-    <!-- If you'd like to support IE8 (for Video.js versions prior to v7) -->
+    <title>FreakyTube</title>
     <script src="https://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
-    <!-- thanks https://videojs.com/getting-started <3-->
-      <link rel="preconnect" href="https://fonts.googleapis.com">
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-      <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-      <meta content="FreakyTube" property="og:title" />
-<meta content="The NEW place for Freakybob Videos!" property="og:description" />
-<meta content="https://videos.freakybob.site" property="og:url" />
-<meta content="https://embed.com/embedimage.png" property="og:image" />
-<meta content="#43B581" data-react-helmet="true" name="theme-color" />
-<link rel="icon" type="image/png" href="favicon.png">
-<meta content="https://videos.freakybob.site/favicon.png" property="og:image" />
-      <style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta content="FreakyTube" property="og:title" />
+    <meta content="The NEW place for Freakybob Videos!" property="og:description" />
+    <meta content="https://videos.freakybob.site" property="og:url" />
+    <meta content="https://embed.com/embedimage.png" property="og:image" />
+    <meta content="#43B581" data-react-helmet="true" name="theme-color" />
+    <link rel="icon" type="image/png" href="favicon.png">
+    <meta content="https://videos.freakybob.site/favicon.png" property="og:image" />
+    
+    <style>
         * {
-          font-family: "Noto Sans", sans-serif;
+            font-family: "Noto Sans", sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html, body {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        body {
+            background-color: rgb(37, 35, 35);
         }
         #loading {
-  position: fixed;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  opacity: 0.7;
-  background-color: #fff;
-  z-index: 99;
-}
+            position: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            opacity: 0.7;
+            background-color: #fff;
+            z-index: 99;
+        }
 
-#loading-image {
-  z-index: 100;
-}
-.logo {
-width: 180px;
-height: auto;
-}
-      </style>
-      </head>
-      <body>
-        <a href="index"><img class="logo" src="logo.png"></a>
-        <br>
-        <a href="community"><button style="border-radius: 8px">Community Videos</button></a>
-      <h1>Freakybob.site WORKING on IE11!</h1>
-      <a href="id/1"><img src="thumbnails/ie6.jpg"></a>
-  <h1>Freakybob.site Mobile UI</h1>
-  <a href="id/2"><img src="thumbnails/mobile.jpg"></a>
-<h1>Freakybob Clicker Gameplay - 1.7</h1>
-<a href="id/3"><img src="thumbnails/clicker.jpg"></a>
-  <h1>Freakybob.site laptop tour!</h1>
-  <a href="id/4"><img src="thumbnails/laptop.jpg"></a>
+        #loading-image {
+            z-index: 100;
+        }
+        .logo {
+            width: 180px;
+            height: auto;
+        }
+        h1, h2, h3, h4 {
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        .video-container {
+            flex-direction: row;
+            margin-top: -130px;
+            gap: 80px;
+            display: flex;
+            position: relative;
+            top: 200px;
+            left: 90px;
+        }
+
+        .video-thumbnail {
+            width: 270px;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(223, 36, 192, 0.5);
+        }
+        .video-title {
+            color: white;
+            margin: 10px 0;
+        }
+        .video-meta {
+            color: grey;
+        }
+
+        .content {
+            flex-grow: 1;
+        }
+        footer {
+            background-color: #2c2c2c;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            width: 100%;
+        }
+      
+        #community {
+            background-color: #43B581;
+            color: #ffffff;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease-in-out;
+        }
+
+        #community:hover {
+            background-color: #2f9e44;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <a href="index"><img class="logo" src="logo.png" alt="Logo"></a>
+        <a href="community"><button id="community" style="border-radius: 8px">Community Videos</button></a>
+    
+        <div class="video-container">
+            <div class="video-item" data-upload-date="2024-10-11T17:30:00">
+                <a href="id/1"><img src="thumbnails/ie6.jpg" class="video-thumbnail" alt="Video Thumbnail"></a>
+                <div class="video-title">Freakybob.site WORKING on IE11!</div>
+                <div class="video-meta">By FreakyBob.site Devs!</div>
+            </div>
+
+            <div class="video-item" data-upload-date="2024-10-11T17:30:00">
+                <a href="id/2"><img src="thumbnails/mobile.jpg" class="video-thumbnail" alt="Video Thumbnail"></a>
+                <div class="video-title">Freakybob.site Mobile UI</div>
+                <div class="video-meta">By FreakyBob.site Devs!</div>
+            </div>
+
+            <div class="video-item" data-upload-date="2024-10-11T17:30:00">
+                <a href="id/3"><img src="thumbnails/clicker.jpg" class="video-thumbnail" alt="Video Thumbnail"></a>
+                <div class="video-title">Freakybob Clicker Gameplay - 1.7</div>
+                <div class="video-meta">By FreakyBob.site Devs!</div>
+            </div>
+
+            <div class="video-item" data-upload-date="2024-10-11T17:30:00">
+                <a href="id/4"><img src="thumbnails/laptop.jpg" class="video-thumbnail" alt="Video Thumbnail"></a>
+                <div class="video-title">Freakybob.site laptop tour!</div>
+                <div class="video-meta">By FreakyBob.site Devs!</div>
+            </div>
+        </div>
+    </div>
+
     <script>
-      $(window).on('load', function () {
-        $('#loading').hide();
-      }) 
+        
+        function timeAgo(date) {
+            const seconds = Math.floor((new Date() - date) / 1000);
+            let interval = Math.floor(seconds / 31536000);
+
+            if (interval >= 1) return interval + (interval === 1 ? " year ago" : " years ago");
+
+            interval = Math.floor(seconds / 2592000);
+            if (interval >= 1) return interval + (interval === 1 ? " month ago" : " months ago");
+
+            interval = Math.floor(seconds / 86400);
+            if (interval >= 1) return interval + (interval === 1 ? " day ago" : " days ago");
+
+            interval = Math.floor(seconds / 3600);
+            if (interval >= 1) return interval + (interval === 1 ? " hour ago" : " hours ago");
+
+            interval = Math.floor(seconds / 60);
+            if (interval >= 1) return interval + (interval === 1 ? " minute ago" : " minutes ago");
+
+            return Math.floor(seconds) + (seconds === 1 ? " second ago" : " seconds ago");
+        }
+
+        
+        $(document).ready(function() {
+            $('.video-item').each(function() {
+                const uploadDate = new Date($(this).data('upload-date'));
+                const timeAgoText = timeAgo(uploadDate);
+                $(this).find('.video-meta').append(` - ${timeAgoText}`);
+            });
+        });
     </script>
+
     <footer>
-      Licensed under GPL-3.0!
-      <br>
-    Loading GIF by <a href="https://icons8.com/preloaders/en/people_and_animals/walk/">https://icons8.com/preloaders/en/people_and_animals/walk/</a>
-    <br>
-    Favicon and logo by <a href="https://github.com/nameswastaken">@nameswastaken</a>!
+        Licensed under GPL-3.0!
+        <br>
+        Loading GIF by <a href="https://icons8.com/preloaders/en/people_and_animals/walk/">https://icons8.com/preloaders/en/people_and_animals/walk/</a>
+        <br>
+        Favicon and logo by <a href="https://github.com/nameswastaken">@nameswastaken</a>!
     </footer>
-  </body>
+</body>
+</html>

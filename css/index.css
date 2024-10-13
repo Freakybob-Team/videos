@@ -30,36 +30,40 @@ body {
     z-index: 100;
 }
 .logo {
-    width: 180px;
+    width: 120px;
     height: auto;
-    margin: 30px;
+    margin-left: 30px;
+    margin-top: 7px;
 }
 h1, h2, h3, h4 {
     color: #ffffff;
     margin-bottom: 10px;
 }
 .video-container {
-    flex-direction: row;
-    margin-top: -130px;
-    gap: 80px;
     display: flex;
-    position: relative;
-    top: 200px;
-    left: 90px;
+    flex-wrap: wrap; 
+    gap: 20px; 
+    justify-content: center; 
+    margin-top: 20px;
+    padding: 20px;
 }
 
 .video-thumbnail {
-    width: 270px;
+    width: 260px; 
     height: auto;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(223, 36, 192, 0.5);
 }
+
 .video-title {
     color: white;
     margin: 10px 0;
+    text-align: left; 
 }
+
 .video-meta {
     color: grey;
+    text-align: left; 
 }
 
 .content {
@@ -75,15 +79,17 @@ footer {
 }
 
 #community {
-    background-color: #43B581;
+    background-color: #19bccc;
     color: #ffffff;
     border-radius: 8px;
     cursor: pointer;
+    padding: 10px 10px;
     transition: all 0.2s ease-in-out;
+    position: relative;
 }
 
 #community:hover {
-    background-color: #2f9e44;
+    background-color: #16a0f0;
 }
 a:link {
     color: white;
@@ -107,4 +113,12 @@ a:link {
     color: white;
     background-color: transparent;
     text-decoration: underline;
+  }
+  .toprow {
+    align-items: center;
+    background-color:rgb(61, 61, 61);
+    height: 50px;
+    justify-content: space-between;
+    flex-direction: row;
+    display: flex;
   }
